@@ -5,6 +5,13 @@ project(AztecDiamond CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(aztec src/main.cpp src/AztecTilingCounter.cpp)
+enable_testing()
 
-install(TARGETS aztec DESTINATION bin)
+add_executable(aztec-bin src/main.cpp src/AztecTilingCounter.cpp)
+
+add_library(aztec-lib src/AztecTilingCounter.cpp)
+target_include_directories(aztec-lib PUBLIC ${CMAKE_SOURCE_DIR}/src)
+
+install(TARGETS aztec-bin DESTINATION bin)
+
+add_subdirectory(test)

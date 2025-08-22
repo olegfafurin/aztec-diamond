@@ -26,6 +26,7 @@ This is a CMake project. The Boost library is a requirement due to the need in B
 - A C++ compiler
 - CMake (version 3.10 or higher)
 - `boost::multiprecision` library for big integer implementation
+- `libgtest-dev` for testing
 
 ### Build Steps
 
@@ -37,7 +38,7 @@ This is a CMake project. The Boost library is a requirement due to the need in B
     cmake ..
     ```
 
-2.  **Compile:** Run `make` from within the build directory.
+2.  **Compile:** Run `make` from the `build` directory.
 
     ```bash
     make
@@ -46,5 +47,10 @@ This is a CMake project. The Boost library is a requirement due to the need in B
 3.  **Run:** Execute the compiled target.
 
     ```bash
-    ./aztec
+    ./aztec-bin
+    ```
+4. **Run tests**
+
+    ```bash
+    ctest
     ```

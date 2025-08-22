@@ -1,5 +1,9 @@
 build
 cmake-build*
 .idea
+CMakeFiles
+Makefile
+Testing
+test/Makefile
 
 GEMINI.md

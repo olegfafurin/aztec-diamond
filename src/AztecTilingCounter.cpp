@@ -55,11 +55,11 @@ BigInt AztecTilingCounter::countTilings(int n) {
 
     for (int k = 0; k <= 2 * n; ++k) {
         DPTable next_dp;
-        const int m_k = getDiagonalSize(k, n);
-        const int m_k_plus_1 = (k < 2 * n) ? getDiagonalSize(k + 1, n) : 0;
+        const int d_size = getDiagonalSize(k, n);
+        const int d_next_size = (k < 2 * n) ? getDiagonalSize(k + 1, n) : 0;
 
         for (const auto &[mask, count]: current_dp) {
-            DPTable transitions = generateTransitions(mask, m_k, m_k_plus_1);
+            DPTable transitions = generateTransitions(mask, d_size, d_next_size);
 
             for (const auto &[new_mask, ways]: transitions) {
                 next_dp[new_mask] += count * ways;
